@@ -99,7 +99,13 @@ async function init() {
 
   // Convenience function to setup a webcam
   const flip = true; // whether to flip the webcam
-  webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+
+
+  if (window.innerWidth>700){
+    webcam = new tmImage.Webcam(400, 400, flip)
+  }
+  else{webcam = new tmImage.Webcam(300, 300, flip)}
+  ; // width, height, flip
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   window.requestAnimationFrame(loop);
@@ -132,7 +138,7 @@ async function predict() {
     //labelContainer.childNodes[i].innerHTML = classPrediction;
 
     let confidence = parseFloat(prediction[i].probability.toFixed(2));
-    let newWidth = Math.max(confidence*400, 70)
+    let newWidth = Math.max(confidence*300, 70)
 
     if(i !== 4){
       confidenceBars[i].style.width = newWidth+"px";

@@ -285,3 +285,58 @@ img.bintoppic{
     border-radius: 2px;
     border: black solid 1px;
 }
+
+
+@media only screen and (max-width: 700px) {
+    body {
+      background-color: lightblue;
+      background-image: none;
+    }
+
+    #main{
+        display: initial;
+    }
+
+    #trashbins{
+        display: none;
+    }
+
+    #locations{
+        display: none;
+    }
+
+    #webcam-container{
+        background: black;
+        height: 300px;
+        width: 300px;
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    #description{
+        width: 250px;
+    }
+
+    .confidencebar{
+        margin-left: 0px;
+        display: block;
+        width: 300px
+    }
+
+    .confidencebar img{
+        left: 4px !important;
+    }
+
+    #pcb img{
+        left: 16px !important;
+    }
+
+    #ccb img{
+        left: -5px !important;
+    }
+    #classifybutton{
+        display: none;
+    }
+  }
